@@ -1159,6 +1159,7 @@ const firebaseConfig = {
 /* ===================== fim da configuração ===================== */
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-analytics.js";
 import { getAuth, signInAnonymously, onAuthStateChanged,
          createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut,
          EmailAuthProvider, linkWithCredential, sendPasswordResetEmail,
@@ -2404,6 +2405,7 @@ if(!isConfigured){
   $("loadingState").classList.remove("hide");
   try{
     const app=initializeApp(firebaseConfig);
+    try{getAnalytics(app);}catch(e){console.warn("analytics:",e);}
     auth=getAuth(app);db=getFirestore(app);colRef=collection(db,"marketplace");bannerRef=collection(db,"banners");
     // Mantém a sessão salva neste aparelho (login continua valendo ao fechar/reabrir).
     try{await setPersistence(auth,browserLocalPersistence);}catch(e){console.warn("persistence:",e);}
