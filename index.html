@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Mercado Livre MCZ — produtos e serviços da sua região</title>
+<title>Market MCZ — produtos e serviços da sua região</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -628,7 +628,7 @@
         <svg viewBox="0 0 24 24" fill="none"><path d="M3 8h18l-1.5 11.2a2 2 0 0 1-2 1.8H6.5a2 2 0 0 1-2-1.8L3 8Z" fill="#fff"/><path d="M8 8V6a4 4 0 1 1 8 0v2" stroke="#DD942F" stroke-width="2" fill="none"/></svg>
       </span>
       <span>
-        <span class="brand-name">Mercado Livre <b>MCZ</b></span>
+        <span class="brand-name">Market MCZ <b>MCZ</b></span>
         <span class="brand-tag">produtos e serviços da sua região</span>
       </span>
     </a>
@@ -840,7 +840,7 @@ service cloud.firestore {
 </div>
 
 <footer class="footer">
-  <b>Mercado Livre MCZ</b> — produtos e serviços da sua comunidade. Os negócios são combinados diretamente entre as pessoas pelo WhatsApp.
+  <b>Market MCZ</b> — produtos e serviços da sua comunidade. Os negócios são combinados diretamente entre as pessoas pelo WhatsApp.
 </footer>
 
 <!-- =============== MODAL: FORM =============== -->
@@ -988,7 +988,7 @@ service cloud.firestore {
 <div class="scrim" id="regScrim">
   <div class="modal" style="max-width:460px" role="dialog" aria-modal="true" aria-labelledby="regTitle">
     <div class="modal-head">
-      <h2 id="regTitle">Entrar no Mercado Livre MCZ</h2>
+      <h2 id="regTitle">Entrar no Market MCZ</h2>
       <button class="xclose" onclick="App.closeRegister()" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
     <div class="modal-body">
@@ -1109,7 +1109,7 @@ service cloud.firestore {
       <button class="xclose" onclick="App.closeFinish()" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
     </div>
     <div class="modal-body">
-      <p style="color:var(--ink-soft);margin:0 0 18px;font-size:14.5px">Esse anúncio foi negociado (vendido, trocado ou doado) através do Mercado Livre MCZ?</p>
+      <p style="color:var(--ink-soft);margin:0 0 18px;font-size:14.5px">Esse anúncio foi negociado (vendido, trocado ou doado) através do Market MCZ?</p>
       <div style="display:flex;flex-direction:column;gap:10px">
         <button class="btn btn-primary" style="justify-content:center;padding:14px" onclick="App.confirmFinish(true)">Sim, fiz negócio</button>
         <button class="btn btn-ghost" style="justify-content:center;padding:14px" onclick="App.confirmFinish(false)">Não fiz negócio</button>
@@ -1218,7 +1218,7 @@ function waLink(b){
   const tipoTxt=b.tipo==="venda"?`(anunciado por R$ ${brl(b.preco)})`
               :b.tipo==="troca"?"(para troca)"
               :b.tipo==="orcamento"?"(serviço — gostaria de um orçamento)":"(doação)";
-  const msg=`Olá! Vi seu anúncio "${b.titulo}" ${tipoTxt} no Mercado Livre MCZ. ${b.categoria==="servico"?"Pode me passar mais informações?":"Ainda está disponível?"} 🙂`;
+  const msg=`Olá! Vi seu anúncio "${b.titulo}" ${tipoTxt} no Market MCZ. ${b.categoria==="servico"?"Pode me passar mais informações?":"Ainda está disponível?"} 🙂`;
   return `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
 }
 
@@ -1355,8 +1355,8 @@ const App={
   authShow(view){
     ["authChoice","authLogin","authRegister","authAccount","authForgot"].forEach(id=>$(id).classList.add("hide"));
     $("authErr").classList.remove("show");
-    const titles={choice:"Entrar no Mercado Livre MCZ",login:"Entrar na sua conta",register:"Criar uma conta",account:"Minha conta",forgot:"Recuperar senha"};
-    $("regTitle").textContent=titles[view]||"Entrar no Mercado Livre MCZ";
+    const titles={choice:"Entrar no Market MCZ",login:"Entrar na sua conta",register:"Criar uma conta",account:"Minha conta",forgot:"Recuperar senha"};
+    $("regTitle").textContent=titles[view]||"Entrar no Market MCZ";
     if(view==="choice")$("authChoice").classList.remove("hide");
     else if(view==="login"){
       $("authLogin").classList.remove("hide");
@@ -1849,8 +1849,8 @@ const App={
     if(custom) return custom;
     const assunto=String(a.titulo||a.overlayTitulo||a.descricao||a.overlaySub||"").trim();
     return assunto
-      ? `Olá! Vi o anúncio "${assunto}" no Mercado Livre MCZ e tenho interesse. Pode me passar mais informações?`
-      : "Olá! Vi este anúncio no Mercado Livre MCZ e tenho interesse. Pode me passar mais informações?";
+      ? `Olá! Vi o anúncio "${assunto}" no Market MCZ e tenho interesse. Pode me passar mais informações?`
+      : "Olá! Vi este anúncio no Market MCZ e tenho interesse. Pode me passar mais informações?";
   },
   adHref(a){
     let url=this.normalizeLink(a.link);
@@ -2304,7 +2304,7 @@ const App={
     const encerrado=finalizado||expirado||pendente||reprovado;
     const statusLine=finalizado
       ? `<div class="help-txt" style="background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin:0 0 14px;font-weight:600;color:var(--ink)">
-          ${b.negocioFechado?"✅ Negócio fechado através do Mercado Livre MCZ":"Anúncio concluído — sem negócio fechado"}
+          ${b.negocioFechado?"✅ Negócio fechado através do Market MCZ":"Anúncio concluído — sem negócio fechado"}
         </div>`
       : pendente?`<div class="help-txt" style="background:var(--marigold-soft);border:1px solid #ecd3a4;border-radius:10px;padding:10px 12px;margin:0 0 14px;font-weight:600;color:#92611a">
           ⏳ Anúncio em análise — ficará no ar assim que for aprovado pela nossa equipe.
